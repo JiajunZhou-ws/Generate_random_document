@@ -42,13 +42,17 @@ The parsing process may take a while to complete, depending on the size of the i
 
 ### document.config:
 format = doc             (doc or txt)
+
 filesize = 5000000       (bytes)
+
 filename = 3.doc         (file name)
 
 To help automatedly generate files, document config can be written in a list, then all the files will be generated one by one
 ### document.config(list):
 format = doc             (doc or txt)
+
 filesize = 1000,10000,100000       (bytes)
+
 filename = 1.doc,2.doc,3.doc    (file name)
 
 For example:
