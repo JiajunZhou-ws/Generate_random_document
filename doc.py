@@ -1,5 +1,6 @@
 import os
 import docx
+from docx.shared import Inches
 class doc:
     def __init__(self, filesize, filename,generator,WORD_SEPARATOR):
         self.filesize = filesize
@@ -20,6 +21,7 @@ class doc:
                 temptxt = ""
                 temptxt = self.generator.generate(self.word_separator)
                 #print(temptxt)
+                doc.add_heading('Heading, level 1', level=1)
                 for i in range(0, 1000):
                     #f.write(self.generator.generate(self.word_separator))
                     temptxt = temptxt + " " + self.generator.generate(self.word_separator)
@@ -27,6 +29,9 @@ class doc:
                     doc.add_paragraph(temptxt)
                 except ValueError as e:
                     print("ATTENTION:"+temptxt)
+                doc.add_picture('1.jpg')
+                doc.add_paragraph('first item in unordered list', style='ListBullet')
+                doc.add_paragraph('first item in ordered list', style='ListNumber')
                 #f.close()
                 doc.save(file_name)
                 statinfo = os.stat(file_name).st_size

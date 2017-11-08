@@ -38,7 +38,18 @@ The parsing process may take a while to complete, depending on the size of the i
 </pre>
 
 *   The `name` argument should match the name used with the earlier `parse` command
-*   The `count` argument is a numeric value indicating how many sentences to generate
+*   The `count` argument is a numeric value indicating how many sentences to generate, 0 means use document config files
+
+####document.config:
+format = doc             (doc or txt)
+filesize = 5000000       (bytes)
+filename = 3.doc         (file name)
+
+To help automatedly generate files, document config can be written in a list, then all the files will be generated one by one
+####document.config(list):
+format = doc             (doc or txt)
+filesize = 1000,10000,100000       (bytes)
+filename = 1.doc,2.doc,3.doc    (file name)
 
 For example:
 
